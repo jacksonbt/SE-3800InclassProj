@@ -13,6 +13,6 @@ addons:
       name: "jacksonbt/SE-3800InclassProj"
       description: "Build submitted via Travis CI"
     notification_email: jacksonbt@msoe.edu
-    build_command_prepend: "msbuild /t:Clean"
+    build_command_prepend: "./configure"
     build_command:   "msbuild /t:Rebuild"
     branch_pattern: coverity_scan
