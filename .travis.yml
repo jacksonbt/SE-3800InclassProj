@@ -1,4 +1,11 @@
 language: csharp
+solution: SE-3800InclassProj/SE-3800InclassProj.sln
+install:
+  - nuget restore SE-3800InclassProj/SE-3800InclassProj.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release SE-3800InclassProj/SE-3800InclassProj.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./MyPoject.Tests/bin/Release/MyProject.Tests.dll
 
 env:
   global:
