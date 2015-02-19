@@ -1,2 +1,18 @@
 language: csharp
 solution: SE-3800InclassProj/SE-3800InclassProj.sln
+
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "fyMn6t1texe44QAnkSvxtqTI4cUxOtIAVhakKyJklMXbmjv8bIPPoWooLUzySJTCD84/uz5Fk8w22Aet/yuaZ0iRD0sK+2rfPW4/UKF5AZArdw3WCq1edr9sC6n9G9Cdipq5Dqb3d06c3iEunU7L6p9RK+CuDrxMJDzOaaUc/HA="
+
+addons:
+  coverity_scan:
+    project:
+      name: "jacksonbt/SE-3800InclassProj"
+      description: "Build submitted via Travis CI"
+    notification_email: jacksonbt@msoe.edu
+    build_command_prepend: "msbuild /t:Clean"
+    build_command:   "msbuild /t:Rebuild"
+    branch_pattern: coverity_scan
