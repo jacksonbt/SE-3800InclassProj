@@ -1,7 +1,6 @@
 ﻿using System;
 using System.CodeDom;
 using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using SE_3800InclassProj.Controllers.API;
 using SE_3800InclassProj.Models;
