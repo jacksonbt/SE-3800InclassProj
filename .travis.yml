@@ -1,24 +1,24 @@
 language: csharp
 solution: SE-3800InclassProj/SE-3800InclassProj.sln
-install:
-  - nuget restore SE-3800InclassProj/SE-3800InclassProj.sln
-  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
-script:
-  - xbuild /p:Configuration=Release SE-3800InclassProj/SE-3800InclassProj.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe SE-3800InclassProj/UnitTestProject2/bin/Release/UnitTestProject2.dll
+# install:
+  # - nuget restore SE-3800InclassProj/SE-3800InclassProj.sln
+  # - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+# script:
+  # - xbuild /p:Configuration=Release SE-3800InclassProj/SE-3800InclassProj.sln
+  # - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe SE-3800InclassProj/UnitTestProject2/bin/Release/UnitTestProject2.dll
 
-env:
-  global:
-   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
-   #   via the "travis encrypt" command using the project repo's public key
-   - secure: "Q1qypPlb7oVCLIh7J5ste6PZuReOTRRXSH07RHG5Zi/Lbq2xAtECzn2aqlKl9EQZ+bOafyT/03AF9tCqIToCN8cZ81V+v4+zh81AmXlDyRGvRGrXObrtuzj3Zgnm5w4DifCynpdGeLytGOHklQOn5P95iM4OjW6twDiKb/zwsic="
+# env:
+  # global:
+   # # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   # #   via the "travis encrypt" command using the project repo's public key
+   # - secure: "Q1qypPlb7oVCLIh7J5ste6PZuReOTRRXSH07RHG5Zi/Lbq2xAtECzn2aqlKl9EQZ+bOafyT/03AF9tCqIToCN8cZ81V+v4+zh81AmXlDyRGvRGrXObrtuzj3Zgnm5w4DifCynpdGeLytGOHklQOn5P95iM4OjW6twDiKb/zwsic="
 
-addons:
-  coverity_scan:
-    project:
-      name: "jacksonbt/SE-3800InclassProj"
-      description: "Build submitted via Travis CI"
-    notification_email: jacksonbt@msoe.edu
-    build_command_prepend: "msbuild /t:Clean"
-    build_command:   "msbuild /t:Rebuild"
-    branch_pattern: coverity_scan
+# addons:
+  # coverity_scan:
+    # project:
+      # name: "jacksonbt/SE-3800InclassProj"
+      # description: "Build submitted via Travis CI"
+    # notification_email: jacksonbt@msoe.edu
+    # build_command_prepend: "msbuild /t:Clean"
+    # build_command:   "msbuild /t:Rebuild"
+    # branch_pattern: coverity_scan
