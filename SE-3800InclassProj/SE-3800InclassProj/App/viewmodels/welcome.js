@@ -13,7 +13,7 @@
             http.post('/api/Numbers?num=' + that.myNum).then(that.getNum)
         }
         this.postNum = function () {
-            that.myNum = that.myNum + 2;
+            that.myNum = that.myNum + 3;
             http.post('/api/Numbers?num=' + that.myNum).then(that.getNum)
             
             
